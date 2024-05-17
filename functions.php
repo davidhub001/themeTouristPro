@@ -55,14 +55,97 @@ add_action('after_setup_theme', 'montheme_register_menus');
 
 // Étape 1 : Création de la page d'options personnalisée
 function ajouter_page_options_custom() {
+    // Ajouter la page principale de menu
     add_menu_page(
-        'Options du thème',
-        'Options du thème',
-        'manage_options',
-        'options-du-theme',
-        'afficher_options_custom',
-        'dashicons-admin-generic',
-        30
+        'Options du thème',           // Titre de la page
+        'Options du thème',           // Titre du menu
+        'manage_options',             // Capacité requise
+        'options-du-theme',           // Slug du menu
+        'afficher_options_custom',    // Fonction de rappel pour afficher le contenu de la page
+        'dashicons-admin-generic',    // Icône du menu
+        30                            // Position dans le menu
+    );
+
+    // Ajouter un sous-menu à la page principale
+    add_submenu_page(
+        'options-du-theme',           // Slug du menu parent
+        'Section 1',                // Titre de la page du sous-menu
+        'Section 1',                // Titre du sous-menu
+        'manage_options',             // Capacité requise
+        'section1',                // Slug du sous-menu
+        'afficher_options_custom'        // Fonction de rappel pour afficher le contenu du sous-menu
+    );
+    add_submenu_page(
+        'options-du-theme',           // Slug du menu parent
+        'Section 2',                // Titre de la page du sous-menu
+        'Section 2',                // Titre du sous-menu
+        'manage_options',             // Capacité requise
+        'section2',                // Slug du sous-menu
+        'afficher_options_custom'        // Fonction de rappel pour afficher le contenu du sous-menu
+    );
+    add_submenu_page(
+        'options-du-theme',           // Slug du menu parent
+        'Section 3',                // Titre de la page du sous-menu
+        'Section 3',                // Titre du sous-menu
+        'manage_options',             // Capacité requise
+        'section3',                // Slug du sous-menu
+        'afficher_options_custom'        // Fonction de rappel pour afficher le contenu du sous-menu
+    );
+    add_submenu_page(
+        'options-du-theme',           // Slug du menu parent
+        'Section 4',                // Titre de la page du sous-menu
+        'Section 4',                // Titre du sous-menu
+        'manage_options',             // Capacité requise
+        'section4',                // Slug du sous-menu
+        'afficher_options_custom'        // Fonction de rappel pour afficher le contenu du sous-menu
+    );
+    add_submenu_page(
+        'options-du-theme',           // Slug du menu parent
+        'Section 5',                // Titre de la page du sous-menu
+        'Section 5',                // Titre du sous-menu
+        'manage_options',             // Capacité requise
+        'section5',                // Slug du sous-menu
+        'afficher_options_custom'        // Fonction de rappel pour afficher le contenu du sous-menu
+    );
+    add_submenu_page(
+        'options-du-theme',           // Slug du menu parent
+        'Section 6',                // Titre de la page du sous-menu
+        'Section 6',                // Titre du sous-menu
+        'manage_options',             // Capacité requise
+        'section6',                // Slug du sous-menu
+        'afficher_options_custom'        // Fonction de rappel pour afficher le contenu du sous-menu
+    );
+    add_submenu_page(
+        'options-du-theme',           // Slug du menu parent
+        'Section 7',                // Titre de la page du sous-menu
+        'Section 7',                // Titre du sous-menu
+        'manage_options',             // Capacité requise
+        'section7',                // Slug du sous-menu
+        'afficher_options_custom'        // Fonction de rappel pour afficher le contenu du sous-menu
+    );
+    add_submenu_page(
+        'options-du-theme',           // Slug du menu parent
+        'Section 8',                // Titre de la page du sous-menu
+        'Section 8',                // Titre du sous-menu
+        'manage_options',             // Capacité requise
+        'section8',                // Slug du sous-menu
+        'afficher_options_custom'        // Fonction de rappel pour afficher le contenu du sous-menu
+    );
+    add_submenu_page(
+        'options-du-theme',           // Slug du menu parent
+        'Section 9',                // Titre de la page du sous-menu
+        'Section 9',                // Titre du sous-menu
+        'manage_options',             // Capacité requise
+        'section9',                // Slug du sous-menu
+        'afficher_options_custom'        // Fonction de rappel pour afficher le contenu du sous-menu
+    );
+    add_submenu_page(
+        'options-du-theme',           // Slug du menu parent
+        'Section 10',                // Titre de la page du sous-menu
+        'Section 10',                // Titre du sous-menu
+        'manage_options',             // Capacité requise
+        'section10',                // Slug du sous-menu
+        'afficher_options_custom'        // Fonction de rappel pour afficher le contenu du sous-menu
     );
 }
 add_action('admin_menu', 'ajouter_page_options_custom');
@@ -70,65 +153,55 @@ add_action('admin_menu', 'ajouter_page_options_custom');
 function afficher_options_custom() {
     ?>
     <div class="wrap">
-        <h1>Options du thème</h1>
-        <form method="post" action="options.php">
-            <?php settings_fields('header_options_group'); ?>
-            <?php do_settings_sections('options-du-theme'); ?>
-            <?php submit_button('Enregistrer'); ?>
-        </form>
+            <?php
+                switch ($_REQUEST['page']) {
+                    case 'options-du-theme':
+                        # code...
+                        include "config/config-head.php";
+                        break;
+                    case 'section1':
+                        # code...
+                        include "config/section1.php";
+
+                        break;
+                    case 'section2':
+                        # code...
+                        include "config/section2.php";
+                        break;
+                    case 'section3':
+                        # code...
+                        include "config/section3.php";
+                        break;
+                    case 'section4':
+                        # code...
+                        include "config/section4.php";
+                        break;
+                    case 'section5':
+                        # code...
+                        include "config/section5.php";
+                        break;
+                    case 'section6':
+                        # code...
+                        include "config/section6.php";
+                        break;
+                    case 'section7':
+                        # code...
+                        include "config/section7.php";
+                        break;
+                    case 'section8':
+                        # code...
+                        include "config/section8.php";
+                        break;
+                    case 'section9':
+                        # code...
+                        include "config/section9.php";
+                        break;
+                    case 'section10':
+                        # code...
+                        include "config/section10.php";
+                        break;
+                }
+            ?>
     </div>
     <?php
 }
-
-// Étape 2 : Ajout des sections et des champs
-function ajouter_sections_et_champs() {
-    add_settings_section('header_options_section', 'Options de l\'en-tête', 'afficher_section_en_tete', 'options-du-theme');
-    add_settings_field('text_header_content', 'Texte section 1 head', 'afficher_champ_contenu', 'options-du-theme', 'header_options_section');
-    add_settings_field('text_header_content_desc', 'Texte section 1 desc', 'afficher_champ_contenu_desc', 'options-du-theme', 'header_options_section');
-    add_settings_field('text_header_content_desc2', 'Texte section 1 desc 2', 'afficher_champ_contenu_desc2', 'options-du-theme', 'header_options_section');
-    add_settings_field('header_background', 'URL de l\'image de fond', 'afficher_champ_background', 'options-du-theme', 'header_options_section');
-}
-add_action('admin_init', 'ajouter_sections_et_champs');
-
-// Fonction pour afficher la section de l'en-tête
-function afficher_section_en_tete() {
-    echo '<p>Personnalisez l\'en-tête de votre thème</p>';
-}
-
-// Fonction pour afficher le champ pour le background
-function afficher_champ_background() {
-    $background = get_option('header_background');
-    ?>
-    <input type="text" id="header_background" name="header_background" value="<?php echo esc_attr($background); ?>" />
-    <?php
-}
-
-// Fonction pour afficher le champ pour le contenu
-function afficher_champ_contenu() {
-    $content = get_option('text_header_content');
-    ?>
-    <textarea id="text_header_content" name="text_header_content" rows="5"><?php echo esc_textarea($content); ?></textarea>
-    <?php
-}
-// Fonction pour afficher le champ pour le contenu
-function afficher_champ_contenu_desc() {
-    $content = get_option('text_header_content_desc');
-    ?>
-    <textarea id="text_header_content_desc" name="text_header_content_desc" rows="5"><?php echo esc_textarea($content); ?></textarea>
-    <?php
-}
-// Fonction pour afficher le champ pour le contenu
-function afficher_champ_contenu_desc2() {
-    $content = get_option('text_header_content_desc2');
-    ?>
-    <textarea id="text_header_content_desc2" name="text_header_content_desc2" rows="5"><?php echo esc_textarea($content); ?></textarea>
-    <?php
-}
-// Étape 3 : Enregistrement des options
-function enregistrer_options_custom() {
-    register_setting('header_options_group', 'header_background', 'esc_url_raw');
-    register_setting('header_options_group', 'text_header_content', 'wp_kses_post');
-    register_setting('header_options_group', 'text_header_content_desc', 'wp_kses_post');
-    register_setting('header_options_group', 'text_header_content_desc2', 'wp_kses_post');
-}
-add_action('admin_init', 'enregistrer_options_custom');
