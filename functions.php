@@ -83,8 +83,10 @@ function afficher_options_custom() {
 // Étape 2 : Ajout des sections et des champs
 function ajouter_sections_et_champs() {
     add_settings_section('header_options_section', 'Options de l\'en-tête', 'afficher_section_en_tete', 'options-du-theme');
+    add_settings_field('text_header_content', 'Texte section 1 head', 'afficher_champ_contenu', 'options-du-theme', 'header_options_section');
+    add_settings_field('text_header_content_desc', 'Texte section 1 desc', 'afficher_champ_contenu_desc', 'options-du-theme', 'header_options_section');
+    add_settings_field('text_header_content_desc2', 'Texte section 1 desc 2', 'afficher_champ_contenu_desc2', 'options-du-theme', 'header_options_section');
     add_settings_field('header_background', 'URL de l\'image de fond', 'afficher_champ_background', 'options-du-theme', 'header_options_section');
-    add_settings_field('header_content', 'Contenu de l\'en-tête', 'afficher_champ_contenu', 'options-du-theme', 'header_options_section');
 }
 add_action('admin_init', 'ajouter_sections_et_champs');
 
@@ -103,15 +105,30 @@ function afficher_champ_background() {
 
 // Fonction pour afficher le champ pour le contenu
 function afficher_champ_contenu() {
-    $content = get_option('header_content');
+    $content = get_option('text_header_content');
     ?>
-    <textarea id="header_content" name="header_content" rows="5"><?php echo esc_textarea($content); ?></textarea>
+    <textarea id="text_header_content" name="text_header_content" rows="5"><?php echo esc_textarea($content); ?></textarea>
     <?php
 }
-
+// Fonction pour afficher le champ pour le contenu
+function afficher_champ_contenu_desc() {
+    $content = get_option('text_header_content_desc');
+    ?>
+    <textarea id="text_header_content_desc" name="text_header_content_desc" rows="5"><?php echo esc_textarea($content); ?></textarea>
+    <?php
+}
+// Fonction pour afficher le champ pour le contenu
+function afficher_champ_contenu_desc2() {
+    $content = get_option('text_header_content_desc2');
+    ?>
+    <textarea id="text_header_content_desc2" name="text_header_content_desc2" rows="5"><?php echo esc_textarea($content); ?></textarea>
+    <?php
+}
 // Étape 3 : Enregistrement des options
 function enregistrer_options_custom() {
     register_setting('header_options_group', 'header_background', 'esc_url_raw');
-    register_setting('header_options_group', 'header_content', 'wp_kses_post');
+    register_setting('header_options_group', 'text_header_content', 'wp_kses_post');
+    register_setting('header_options_group', 'text_header_content_desc', 'wp_kses_post');
+    register_setting('header_options_group', 'text_header_content_desc2', 'wp_kses_post');
 }
 add_action('admin_init', 'enregistrer_options_custom');
