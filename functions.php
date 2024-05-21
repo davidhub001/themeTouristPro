@@ -1,4 +1,5 @@
 <?php
+include "config/config.php";
 function montheme_enqueue_styles() {
     // Google Fonts
     wp_enqueue_style('google-fonts-poppins', 'https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700');

@@ -11,7 +11,7 @@
     				<div class="destination-slider owl-carousel ftco-animate">
     					<div class="item">
 		    				<div class="destination">
-		    					<a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url(images/destination-1.jpg);">
+		    					<a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url(<?=$url_image.'images/destination-1.jpg'?>);">
 		    						<div class="icon d-flex justify-content-center align-items-center">
 		    							<span class="icon-search2"></span>
 		    						</div>
@@ -24,7 +24,7 @@
 	    				</div>
 	    				<div class="item">
 		    				<div class="destination">
-		    					<a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url(images/destination-2.jpg);">
+		    					<a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url(<?=$url_image.'images/destination-2.jpg'?>);">
 		    						<div class="icon d-flex justify-content-center align-items-center">
 		    							<span class="icon-search2"></span>
 		    						</div>
@@ -37,7 +37,7 @@
 	    				</div>
 	    				<div class="item">
 		    				<div class="destination">
-		    					<a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url(images/destination-3.jpg);">
+		    					<a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url(<?=$url_image.'images/destination-3.jpg'?>);">
 		    						<div class="icon d-flex justify-content-center align-items-center">
 		    							<span class="icon-search2"></span>
 		    						</div>
@@ -50,7 +50,7 @@
 	    				</div>
 	    				<div class="item">
 		    				<div class="destination">
-		    					<a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url(images/destination-4.jpg);">
+		    					<a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url(<?=$url_image.'images/destination-4.jpg'?>);">
 		    						<div class="icon d-flex justify-content-center align-items-center">
 		    							<span class="icon-search2"></span>
 		    						</div>
@@ -63,7 +63,7 @@
 	    				</div>
 	    				<div class="item">
 		    				<div class="destination">
-		    					<a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url(images/destination-5.jpg);">
+		    					<a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url(<?=$url_image.'images/destination-5.jpg'?>);">
 		    						<div class="icon d-flex justify-content-center align-items-center">
 		    							<span class="icon-search2"></span>
 		    						</div>
@@ -76,7 +76,7 @@
 	    				</div>
 	    				<div class="item">
 		    				<div class="destination">
-		    					<a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url(images/destination-6.jpg);">
+		    					<a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url(<?=$url_image.'images/destination-6.jpg'?>);">
 		    						<div class="icon d-flex justify-content-center align-items-center">
 		    							<span class="icon-search2"></span>
 		    						</div>
