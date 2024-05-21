@@ -1,5 +1,13 @@
 <?php
 include "config/config.php";
+include "data.php";
+
+function my_admin_enqueue_styles() {
+    // Enregistrement et chargement du style pour l'admin
+    wp_enqueue_style( 'my-admin-style', get_template_directory_uri() . '/admin-style.css' );
+}
+add_action( 'admin_enqueue_scripts', 'my_admin_enqueue_styles' );
+
 function montheme_enqueue_styles() {
     // Google Fonts
     wp_enqueue_style('google-fonts-poppins', 'https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700');

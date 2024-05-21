@@ -1,0 +1,46 @@
+/* admin-style.css */
+.section2{
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    .custom-fieldset {
+        border: 2px solid #007cba; /* Couleur de bordure personnalisée */
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        margin-right: 20px;
+        background-color: #f9f9f9; /* Couleur de fond personnalisée */
+        width: 210px;
+        legend {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #007cba; /* Couleur du texte de la légende */
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+    }
+
+    .custom-fieldset input[type="file"],
+    .custom-fieldset input[type="text"],
+    .custom-fieldset textarea {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    
+    .custom-fieldset textarea {
+        height: 100px;
+    }
+    
+    .custom-fieldset input[type="file"] {
+        padding: 4px;
+    }
+    
+}
